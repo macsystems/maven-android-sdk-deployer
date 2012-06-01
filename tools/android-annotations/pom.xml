@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.simpligility.android.sdk-deployer</groupId>
+    <artifactId>android-annotations</artifactId>
+    <packaging>pom</packaging>
+    <name>Android Annotations</name>
+
+    <parent>
+        <groupId>com.simpligility.android.sdk-deployer</groupId>
+        <artifactId>android-tools</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <properties>
+        <sdk.tools.path>${android.sdk.path}/tools</sdk.tools.path>
+        <sdk.tools.support.path>${sdk.tools.path}/support</sdk.tools.support.path>
+        <android.annotations.jar.path>${sdk.tools.support.path}/annotations.jar</android.annotations.jar.path>
+        <!-- Version from Adt 19 -->
+        <android.annotations.jar.version>19</android.annotations.jar.version>
+        <android.annotations.groupid>com.google.android.annotations</android.annotations.groupid>
+        <android.annotations.artifactid>android-annotations</android.support.artifactid>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-install-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals><goal>install-file</goal></goals>
+                        <configuration>
+                            <groupId>${android.annotations.groupid}</groupId>
+                            <artifactId>${android.annotations.artifactid}</artifactId>
+                            <packaging>jar</packaging>
+                            <version>${jar.version}</version>
+                            <file>${jar.path}</file>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>a</id>
+                        <phase>deploy</phase>
+                        <goals><goal>deploy-file</goal></goals>
+                        <configuration>
+                            <groupId>${extras.compatibility.groupid}</groupId>
+                            <artifactId>${android.support.artifactid}</artifactId>
+                            <packaging>jar</packaging>
+                            <version>${android.annotations.jar.version}</version>
+                            <file>${android.annotations.jar.path}</file>
+                            <url>${repo.url}</url>
+                            <repositoryId>${repo.id}</repositoryId>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
