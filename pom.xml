@@ -27,6 +27,10 @@
         <sdk.extras.compatibility.path>${sdk.extras.path}/android/support</sdk.extras.compatibility.path>
         <sdk.extras.analytics.path>${sdk.extras.path}/google/analytics_sdk</sdk.extras.analytics.path>
         <sdk.extras.admob.path>${sdk.extras.path}/google/admob_ads_sdk</sdk.extras.admob.path>
+        <sdk.tools.path>${android.sdk.path}/tools</sdk.tools.path>
+        <sdk.tools.support.path>${sdk.tools.path}/support</sdk.tools.support.path>
+        <android.annotations.groupid>com.google.android.annotations</android.annotations.groupid>
+        <android.annotations.artifactid>android-annotations</android.annotations.artifactid>
         <platform.android.groupid>android</platform.android.groupid>
         <platform.android.artifactid>android</platform.android.artifactid>
         <addon.googlemaps.groupid>com.google.android.maps</addon.googlemaps.groupid>
@@ -79,8 +83,9 @@
     </build>
 
     <modules>
-        <module>platforms</module>
+        <!-- <module>platforms</module>
         <module>add-ons</module>
-        <module>extras</module>
+        <module>extras</module> -->
+        <module>tools</module>
     </modules>
 </project>
