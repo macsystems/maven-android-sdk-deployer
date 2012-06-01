@@ -283,6 +283,13 @@ For the Google AdMob Ads extra (ATTENTION! Do NOT use provided scope!!)
       <version>6.0.1-r6</version>
     </dependency>
 
+For the ADTs android annotations from tools (ATTENTION! Do NOT use provided scope!!)
+<dependency>
+  <groupId>com.google.android.annotations</groupId>
+  <artifactId>android-annotations</artifactId>
+  <version>adt-19</version>
+</dependency>
+
 To install only a specific module use
 
         mvn clean install -N
