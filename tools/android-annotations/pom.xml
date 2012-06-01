@@ -14,7 +14,6 @@
 
     <properties>
         <android.annotations.jar.path>${sdk.tools.support.path}/annotations.jar</android.annotations.jar.path>
-        <!-- Version from Adt 19 -->
         <android.annotations.jar.version>adt-19</android.annotations.jar.version>
     </properties>
     <build>
